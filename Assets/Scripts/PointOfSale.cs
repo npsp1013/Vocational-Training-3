@@ -86,7 +86,6 @@ public class PointOfSale : MonoBehaviour
     public void ReadCard()
     {
         if (_mode != Mode.ReadCard) return;
-
         if (_card == null) return;
         _card.AddValue(_total);
         _outputScreen.text += string.Format("\n交易已被接納\n餘額爲 {0} 港幣\n", _card.Value);
