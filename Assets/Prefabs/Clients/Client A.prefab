@@ -1867,7 +1867,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1817594842213330868}
-  - component: {fileID: 1817594842203799636}
   - component: {fileID: 1817594842213168019}
   m_Layer: 0
   m_Name: ManC
@@ -1892,25 +1891,6 @@ Transform:
   m_Father: {fileID: 5065840518663650295}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!95 &1817594842203799636
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817594842213168020}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 4078d61f0db503b44a342f0a3fb68e6a, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!111 &1817594842213168019
 Animation:
   m_ObjectHideFlags: 0

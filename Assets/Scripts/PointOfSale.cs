@@ -10,6 +10,7 @@ public class PointOfSale : MonoBehaviour
     [SerializeField] private float _total;
     [SerializeField] private GameObject _registerScreen;
     [SerializeField] private Mode _mode;
+    [SerializeField] private Mode _payMode;
     [SerializeField] private OctopusCard _card;
 
     public float Total { get { return _total; } }
@@ -43,6 +44,7 @@ public class PointOfSale : MonoBehaviour
                 _outputScreen.text += outputText;
                 _total += product.Price;
                 _mode = Mode.CheckOut;
+                _payMode = Mode.CheckOut;
             }
         }
     }
@@ -67,6 +69,11 @@ public class PointOfSale : MonoBehaviour
 
     public void CheckOut()
     {
+        if (_mode == Mode.Finished)
+        {
+            _outputScreen.text += "交易完成，請按“取消”進行下一筆交易。\n";
+            return;
+        }
         if (_mode != Mode.CheckOut && _mode != Mode.AddValue)
         {
             _outputScreen.text += "沒有貨品或增值款項\n";
@@ -87,8 +94,29 @@ public class PointOfSale : MonoBehaviour
     {
         if (_mode != Mode.ReadCard) return;
         if (_card == null) return;
-        _card.AddValue(_total);
-        _outputScreen.text += string.Format("\n交易已被接納\n餘額爲 {0} 港幣\n", _card.Value);
+        bool isTransactionSuccess = false;
+        if (_payMode == Mode.AddValue)
+        {
+            _card.AddValue(_total);
+            isTransactionSuccess = true;
+        }
+        if (_payMode == Mode.CheckOut)
+        {
+            isTransactionSuccess = _card.ReduceValue(_total);
+        }
+        if (isTransactionSuccess == true)
+        {
+            _outputScreen.text += string.Format("\n交易已被接納\n餘額爲 {0} 港幣\n", _card.Value);
+        }
+        if (isTransactionSuccess == false)
+        {
+            _outputScreen.text += string.Format("\n交易失敗\n餘額爲 {0} 港幣\n", _card.Value);
+        }
+        if (_card.Value <= 0.0f)
+        {
+            _outputScreen.text += "請儘快增值!\n";
+        }
+        
         _mode = Mode.Finished;
     }
 
@@ -98,6 +126,7 @@ public class PointOfSale : MonoBehaviour
         _total += value;
         _outputScreen.text += string.Format("增值 {0} 港幣\n", value);
         _mode = Mode.AddValue;
+        _payMode = Mode.AddValue;
     }
 
     public void AddCard(OctopusCard card)
