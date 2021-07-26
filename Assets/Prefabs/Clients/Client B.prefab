@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65afcdb998343994ab981e5d672e569e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCardValue: 50
+  targetCardValue: 27
   card: {fileID: 0}
 --- !u!1001 &8157300308401748556
 PrefabInstance:
@@ -176,6 +176,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8157300307927628476}
     m_Modifications:
+    - target: {fileID: 2432442324140646428, guid: c50493e9e296e8e4e9b7c53b0ac30b6c, type: 3}
+      propertyPath: _value
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 3928460763969469107, guid: c50493e9e296e8e4e9b7c53b0ac30b6c, type: 3}
       propertyPath: m_RootOrder
       value: 3
