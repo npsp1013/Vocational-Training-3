@@ -17,4 +17,6 @@ public class Customer : MonoBehaviour
         float difference = (targetCardValue - card.Value);
         return difference < 0.01f && difference >= -0.01f;
     }
+
+    //TODO: Check whether the scanned items can fulfill the task
 }
