@@ -7,7 +7,7 @@ public class Customer : MonoBehaviour
     [SerializeField] private OctopusCard card;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         card = gameObject.GetComponentInChildren<OctopusCard>();
     }
