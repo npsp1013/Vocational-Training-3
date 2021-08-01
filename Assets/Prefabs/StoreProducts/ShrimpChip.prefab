@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _barcode: 4892688881769
-  _price: 9
+  _price: 13
   _name: "\u8766\u7247"
 --- !u!65 &3133764805487939879
 BoxCollider:

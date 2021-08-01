@@ -105,8 +105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65afcdb998343994ab981e5d672e569e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCardValue: 27
-  card: {fileID: 0}
+  _targetCardValue: 23
+  _card: {fileID: 6051805849122910139}
+  _anim: {fileID: 8157300308407559468}
+  _questText: "\u8CB7\u91CE\u98DF"
 --- !u!1001 &8157300308401748556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +169,11 @@ PrefabInstance:
 --- !u!4 &8157300308402135258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400022, guid: 53a11ea5b2afe8f489b5be2c41fe916d, type: 3}
+  m_PrefabInstance: {fileID: 8157300308401748556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &8157300308407559468 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 11100000, guid: 53a11ea5b2afe8f489b5be2c41fe916d, type: 3}
   m_PrefabInstance: {fileID: 8157300308401748556}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8231894285127864231
@@ -235,6 +242,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3928460763969469107, guid: c50493e9e296e8e4e9b7c53b0ac30b6c, type: 3}
   m_PrefabInstance: {fileID: 8231894285127864231}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6051805849122910139 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2432442324140646428, guid: c50493e9e296e8e4e9b7c53b0ac30b6c, type: 3}
+  m_PrefabInstance: {fileID: 8231894285127864231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a889595e532c84b969c3248b90efef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9153100998889510063
 PrefabInstance:
   m_ObjectHideFlags: 0

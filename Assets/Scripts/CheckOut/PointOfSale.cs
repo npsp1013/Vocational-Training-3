@@ -80,9 +80,10 @@ public class PointOfSale : MonoBehaviour
             return;
         }
         _outputScreen.text += string.Format("\n總計 {0} 港幣\n請拍卡\n", _total);
-
-        _mode = Mode.ReadCard;
         
+        _mode = Mode.ReadCard;
+        MicrophoneCapture microphone = GameObject.Find("DialogFlow Manager").GetComponent<MicrophoneCapture>();
+        StartCoroutine(microphone.StartCaptureAfterTime(0, 5));
     }
 
     public bool CanReadCard()

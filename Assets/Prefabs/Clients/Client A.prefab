@@ -48,8 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65afcdb998343994ab981e5d672e569e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCardValue: 24
-  card: {fileID: 0}
+  _targetCardValue: 24
+  _card: {fileID: 2937769737817316876}
+  _anim: {fileID: 6579003259003101528}
+  _questText: "\u57CB\u55AE"
 --- !u!1 &6579003259003101355
 GameObject:
   m_ObjectHideFlags: 0
@@ -3179,6 +3181,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3928460763969469107, guid: c50493e9e296e8e4e9b7c53b0ac30b6c, type: 3}
   m_PrefabInstance: {fileID: 649867881126379024}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2937769737817316876 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2432442324140646428, guid: c50493e9e296e8e4e9b7c53b0ac30b6c, type: 3}
+  m_PrefabInstance: {fileID: 649867881126379024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a889595e532c84b969c3248b90efef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1606747819007378387
 PrefabInstance:
   m_ObjectHideFlags: 0

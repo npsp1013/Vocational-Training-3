@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> customerPrefabs;
 
-    [SerializeField] private GameObject currentCustomer;
+    [SerializeField] private GameObject _currentCustomer;
 
     [SerializeField] private bool isCompleted = false;
+
+    public GameObject CurrentCustomer { get { return _currentCustomer; } }
 
     // Start is called before the first frame update
     void Start()
@@ -29,17 +31,17 @@ public class GameManager : MonoBehaviour
         }
 
         int nextCustomerID = Random.Range(0, customerPrefabs.Count);
-        currentCustomer = Instantiate(customerPrefabs[nextCustomerID]);
+        _currentCustomer = Instantiate(customerPrefabs[nextCustomerID]);
         customerPrefabs.Remove(customerPrefabs[nextCustomerID]);
     }
 
     private void Main()
     {
         if (isCompleted == true) return;
-        if (currentCustomer.GetComponent<Customer>().isCompleted() == true)
+        if (_currentCustomer.GetComponent<Customer>().isCompleted() == true)
         {
             
-            Destroy(currentCustomer);
+            Destroy(_currentCustomer);
             if (customerPrefabs.Count == 0)
             {
                 Debug.Log("You have completed this session!");
