@@ -51,7 +51,8 @@ MonoBehaviour:
   _targetCardValue: 24
   _card: {fileID: 2937769737817316876}
   _anim: {fileID: 6579003259003101528}
-  _questText: "\u57CB\u55AE"
+  _questText:
+  - "\u57CB\u55AE"
 --- !u!1 &6579003259003101355
 GameObject:
   m_ObjectHideFlags: 0

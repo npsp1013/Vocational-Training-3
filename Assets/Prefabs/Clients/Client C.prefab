@@ -48,7 +48,8 @@ MonoBehaviour:
   _targetCardValue: 500
   _card: {fileID: 1591512315168133485}
   _anim: {fileID: 2000969406061432853}
-  _questText: "\u589E\u503C"
+  _questText:
+  - "\u589E\u503C\u4E94\u767E"
 --- !u!1001 &2000969406051389301
 PrefabInstance:
   m_ObjectHideFlags: 0

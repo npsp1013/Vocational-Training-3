@@ -117,7 +117,9 @@ public class PointOfSale : MonoBehaviour
         {
             _outputScreen.text += "請儘快增值!\n";
         }
-        
+
+        MicrophoneCapture microphone = GameObject.Find("DialogFlow Manager").GetComponent<MicrophoneCapture>();
+        StartCoroutine(microphone.StartCaptureAfterTime(0, 5));
         _mode = Mode.Finished;
     }
 

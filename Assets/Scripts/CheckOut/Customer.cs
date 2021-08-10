@@ -5,9 +5,9 @@ public class Customer : MonoBehaviour
     [SerializeField] private float _targetCardValue;
     [SerializeField] private OctopusCard _card;
     [SerializeField] private Animation _anim;
-    [SerializeField] private string _questText;
+    [SerializeField] private List<string> _questText;
 
-    public string QuestText { get { return _questText; } }
+    public List<string> QuestText { get { return _questText; } }
 
     // Start is called before the first frame update
     void Awake()
@@ -33,6 +33,7 @@ public class Customer : MonoBehaviour
         StartCoroutine(microphone.StartCaptureAfterTime(0, 5));
     }
 
+    
 
     //TODO: Check whether the scanned items can fulfill the task
 }

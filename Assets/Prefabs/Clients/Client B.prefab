@@ -108,7 +108,9 @@ MonoBehaviour:
   _targetCardValue: 23
   _card: {fileID: 6051805849122910139}
   _anim: {fileID: 8157300308407559468}
-  _questText: "\u8CB7\u91CE\u98DF"
+  _questText:
+  - "\u6536\u9322"
+  - "\u589E\u503C\u4E94\u5341"
 --- !u!1001 &8157300308401748556
 PrefabInstance:
   m_ObjectHideFlags: 0

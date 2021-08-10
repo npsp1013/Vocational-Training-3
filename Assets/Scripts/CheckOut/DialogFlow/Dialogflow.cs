@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-
+using UnityEngine.UI;
 public class Dialogflow : MonoBehaviour
 {
+    [SerializeField] private InputField _chatHistory;
     //Detect intent with audio input(speech) using Dialogflow API
     //Reference: https://cloud.google.com/dialogflow/es/docs/how/detect-intent-audio#detect-intent-audio-drest
     public IEnumerator Request(byte[] speech)
@@ -34,7 +35,7 @@ public class Dialogflow : MonoBehaviour
         yield return req.SendWebRequest();
 
         handleRequest(req);
-       
+
         req.Dispose();
     }
 
@@ -63,23 +64,37 @@ public class Dialogflow : MonoBehaviour
         {
             return;
         }
-        //StartCoroutine(this.GetComponent<TextToSpeech>().Request(content.queryResult.fulfillmentText)); //Text-to-Speech Request
 
+        _chatHistory.text += content.queryResult.queryText + "\n";
         RespondIntent(content.queryResult.intent, content.queryResult.fulfillmentText);
     }
 
     public void RespondIntent(Intent intent, string response)
     {
-       
+
         Customer customer = GameObject.Find("Game Manager").GetComponent<GameManager>().CurrentCustomer.GetComponent<Customer>();
+
+        string result = response;
 
         switch (intent.displayName)
         {
             case "Welcome":
-                Speak(response + customer.QuestText);
+                result += customer.QuestText[0];
+                _chatHistory.text += result + "\n";
+                Speak(result);
                 break;
             case "RequestReadCard":
-                Speak(response);
+                _chatHistory.text += response + "\n";
+                Speak(result);
+                break;
+            case "CheckRemainValue":
+                _chatHistory.text += response + "\n";
+                Speak(result);
+                break;
+            case "NotEnoughValue":
+                result += customer.QuestText[1];
+                _chatHistory.text += result + "\n";
+                Speak(result);
                 break;
             default:
                 Debug.Log("Undefine Intent");
